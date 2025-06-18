@@ -1,0 +1,72 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services) // Firebase 사용 시 유지
+    // 다른 plugins {} 블록이 libs.versions.toml에 정의되어 있다면 여기에 추가
+}
+
+// android {} 블록
+android {
+    namespace 'kr.ac.baeseok.p_capston' // 재형님의 패키지명
+    compileSdk 35 // 재형님의 현재 설정
+
+    // buildFeatures 블록 (BuildConfig 사용 시 필요)
+    buildFeatures {
+        buildConfig true // BuildConfig에 기본 필드 (DEBUG, APPLICATION_ID 등) 필요시 유지.
+        // viewBinding true // 필요시 유지
+    }
+
+    defaultConfig {
+        applicationId "kr.ac.baeseok.p_capston" // 재형님의 패키지명
+        minSdk 28 // 재형님의 현재 설정
+        targetSdk 35 // 재형님의 현재 설정
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        // ML Kit은 Java 8 이상 필요 (최신 버전은 더 높을 수 있음)
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true // Desugar 필요시 유지
+    }
+}
+
+// dependencies {} 블록
+dependencies {
+
+    // AndroidX 기본 라이브러리
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+
+    // Firebase (BoM 사용 시)
+    implementation(platform(libs.firebase.bom))
+    implementation libs.firebase.auth
+    implementation libs.firebase.firestore
+
+    // --- ML Kit Text Recognition (com.google.mlkit) 종속성 직접 문자열로 추가 ---
+    implementation 'com.google.mlkit:text-recognition-korean:16.0.1'
+
+    // OpenCSV
+    implementation libs.opencsv
+
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'org.json:json:20211205'
+
+    // 테스트 종속성
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    coreLibraryDesugaring(libs.android.desugar.jdk.libs) // libs.versions.toml의 android-desugar-jdk-libs 정의 참조
+}
+

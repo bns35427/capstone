@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MedicationCheckActivity"> <!-- Activity 이름 확인 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="복약 체크"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"/> <!-- 제목 중앙 정렬 -->
+
+        <!-- 필요하다면 오른쪽에 다른 UI 추가 -->
+
+    </LinearLayout>
+
+    <!-- !!! 복약 체크 목록을 보여줄 RecyclerView !!! -->
+    <!-- 이 태그와 ID가 정확히 있어야 합니다. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMedicationCheck"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_medication_check"
+        android:contentDescription="복약 체크 목록"/>
+
+    <!-- TODO: 하단 버튼 등 필요시 추가 -->
+    <!-- 뒤로가기 버튼 -->
+    <Button
+        android:id="@+id/buttonBack_MedicationCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:text="뒤로가기" />
+
+</LinearLayout>
+

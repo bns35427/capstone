@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:background="@android:color/white"
+    android:layout_marginBottom="4dp"
+    android:elevation="1dp">
+
+    <!-- 알람 정보 표시 영역 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 시간대 및 시간 -->
+        <TextView
+            android:id="@+id/textViewAlarmTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="아침 08:00"/>
+
+        <!-- 요일 -->
+        <TextView
+            android:id="@+id/textViewAlarmDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="반복: 월, 수, 금"/>
+
+        <!-- 복용량/메모 (선택 사항이므로 없을 수도 있습니다) -->
+        <TextView
+            android:id="@+id/textViewAlarmDosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="복용량: 1정"/>
+
+    </LinearLayout>
+
+    <!-- 알람 삭제 버튼 -->
+    <Button
+        android:id="@+id/buttonDeleteAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="삭제"
+        android:textSize="24sp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+</LinearLayout>

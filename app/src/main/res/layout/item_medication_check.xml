@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:background="@android:color/white"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+
+    <!-- 텍스트 정보(약명, 알람, 복용량 등) 세로 배치 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginEnd="8dp">
+
+        <!-- 약 이름 -->
+        <TextView
+            android:id="@+id/textViewCheckMedicineName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            tools:text="타이레놀"/>
+
+        <!-- 시간대 및 시간 -->
+        <TextView
+            android:id="@+id/textViewCheckAlarmTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="아침 08:00"/>
+
+        <!-- 요일 -->
+        <TextView
+            android:id="@+id/textViewCheckAlarmDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="반복: 월, 수, 금"/>
+
+        <!-- 복용량/메모 (선택 사항) -->
+        <TextView
+            android:id="@+id/textViewCheckAlarmDosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="복용량: 1정"/>
+
+    </LinearLayout>
+
+    <!-- 복용 완료 체크박스: 가장 오른쪽 -->
+    <CheckBox
+        android:id="@+id/checkBoxMedicationTaken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="복용 완료"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

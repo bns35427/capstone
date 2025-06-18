@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AlarmRegistrationActivity">
+
+    <TextView
+        android:id="@+id/textViewAlarmRegistrationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알람 등록"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 아침 알람 설정 섹션 -->
+            <LinearLayout
+                android:id="@+id/linearLayoutMorningAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@android:color/white"
+                android:elevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/textViewMorningTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아침 알람"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간 설정:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/buttonSetTime_morning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간 선택"/>
+
+                    <!-- 아침 알람 시간 표시 TextView -->
+                    <TextView
+                        android:id="@+id/textViewSelectedTime_morning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="미설정"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="반복 요일:"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- 요일 선택 버튼들 -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutDays_morning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp">
+
+                    <Button android:id="@+id/buttonDayMon_morning" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="월" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayTue_morning" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="화" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayWed_morning" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="수" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayThu_morning" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="목" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayFri_morning" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="금" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDaySat_morning" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="토" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDaySun_morning" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="일" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="복용량/메모 (선택 사항)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextDosage_morning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences|textMultiLine"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/buttonRegisterAlarm_morning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="아침 알람 등록"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+            <!-- 점심 알람 설정 섹션 -->
+            <LinearLayout
+                android:id="@+id/linearLayoutLunchAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@android:color/white"
+                android:elevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/textViewLunchTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="점심 알람"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간 설정:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/buttonSetTime_lunch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간 선택"/>
+
+                    <!-- 점심 알람 시간 표시 TextView -->
+                    <TextView
+                        android:id="@+id/textViewSelectedTime_lunch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="미설정"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="반복 요일:"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- 요일 선택 버튼들 -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutDays_lunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp">
+
+                    <Button android:id="@+id/buttonDayMon_lunch" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="월" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayTue_lunch" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="화" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayWed_lunch" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="수" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayThu_lunch" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="목" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayFri_lunch" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="금" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDaySat_lunch" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="토" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDaySun_lunch" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="일" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="복용량/메모 (선택 사항)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextDosage_lunch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences|textMultiLine"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 각 알람 시간별 등록 버튼 -->
+                <Button
+                    android:id="@+id/buttonRegisterAlarm_lunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="점심 알람 등록"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+            <!-- 저녁 알람 설정 섹션 -->
+            <LinearLayout
+                android:id="@+id/linearLayoutEveningAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@android:color/white"
+                android:elevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/textViewEveningTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="저녁 알람"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간 설정:"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/buttonSetTime_evening"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간 선택"/>
+
+                    <!-- 저녁 알람 시간 표시 TextView -->
+                    <TextView
+                        android:id="@+id/textViewSelectedTime_evening"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="미설정"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@android:color/black"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="반복 요일:"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <!-- 요일 선택 버튼들 -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutDays_evening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp">
+
+                    <Button android:id="@+id/buttonDayMon_evening" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="월" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayTue_evening" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="화" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayWed_evening" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="수" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayThu_evening" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="목" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDayFri_evening" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="금" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDaySat_evening" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="토" android:layout_marginEnd="4dp" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                    <Button android:id="@+id/buttonDaySun_evening" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="일" style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="복용량/메모 (선택 사항)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextDosage_evening"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences|textMultiLine"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 각 알람 시간별 등록 버튼 -->
+                <Button
+                    android:id="@+id/buttonRegisterAlarm_evening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="저녁 알람 등록"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+            <!-- 등록된 알람 목록 표시 섹션 추가 -->
+            <TextView
+                android:id="@+id/textViewRegisteredAlarmsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="등록된 알람 목록"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- 등록된 알람 항목들이 동적으로 추가될 LinearLayout -->
+            <LinearLayout
+                android:id="@+id/linearLayoutRegisteredAlarms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- 알람 항목들은 item_registered_alarm.xml 레이아웃으로 여기서 동적으로 추가됩니다. -->
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 전체 알람 설정 취소/저장 버튼 등 (필요시) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <!-- 필요하다면 알람 설정 완료/취소 버튼 등을 여기에 추가 -->
+        <Button
+            android:id="@+id/buttonCancelAlarmRegistration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="뒤로가기"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/buttonSaveAllAlarms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="알람 저장"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/buttonSaveAllAlarmsAllMed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="모든 약들에 적용"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AllAlarmsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="등록된 모든 알람"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"/> <!-- 제목 중앙 정렬 -->
+
+        <!-- 필요하다면 오른쪽에 다른 UI 추가 -->
+
+    </LinearLayout>
+
+
+    <!-- 모든 알람 목록을 보여줄 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAllAlarms"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_all_alarms"/>
+
+    <!-- 필요하다면 하단에 추가 버튼 등 UI 요소 추가 -->
+    <!-- 뒤로가기 버튼 추가 -->
+    <Button
+        android:id="@+id/buttonBack_AllAlarms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="뒤로가기"
+        android:textSize="24sp"
+        />
+
+</LinearLayout>
+

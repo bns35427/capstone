@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- 기본 텍스트를 볼드체로 -->
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

@@ -1,0 +1,35 @@
+[versions]
+agp = "8.9.0" # Android Gradle Plugin 버전 (재형님의 현재 버전 확인)
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.1.4"
+googleGmsGoogleServices = "4.4.2"
+firebaseBom = "32.8.1"
+opencsv = "5.9"
+androidDesugarJdkLibs = "2.0.4" # Desugar 필요시 유지
+
+[libraries]
+# --- 기존 안드로이드/Firebase/OpenCSV/Desugar 라이브러리 정의 유지 ---
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+opencsv = { group = "com.opencsv", name = "opencsv", version.ref = "opencsv" }
+android-desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" } # Desugar 필요시 유지
+
+
+# --- Firebase (BoM 사용 시) ---
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth" } # BoM 사용 시 version.ref 없음
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore" } # BoM 사용 시 version.ref 없음
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

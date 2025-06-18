@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#F0F0F0"
+        android:gravity="center_vertical">
+
+        <!-- 약 이미지 -->
+        <ImageView
+            android:id="@+id/imageViewItemMedicine"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#CCCCCC"
+            android:contentDescription="약 이미지"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop" />
+
+        <!-- 약 이름과 정보를 수직으로 담을 LinearLayout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewItemMedicineName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="약이름"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewItemMedicineInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="약 주의정보"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:maxLines="2" />
+        </LinearLayout>
+
+
+
+        <!-- 삭제 버튼 -->
+        <Button
+            android:id="@+id/buttonItemDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="삭제"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="0dp"
+            android:includeFontPadding="false"
+            android:visibility="visible" />
+
+        <!-- 알람 등록 버튼 -->
+        <Button
+            android:id="@+id/buttonItemSetAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="알람\n등록"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:padding="0dp"
+            android:includeFontPadding="false"
+            android:visibility="visible" />
+
+
+
+    </LinearLayout>
+</ScrollView>

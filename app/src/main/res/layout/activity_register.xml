@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가입화면"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="이름"
+        android:textSize="30sp"
+        android:inputType="text"
+        android:layout_marginBottom="12dp"
+        android:paddingHorizontal="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="휴대폰번호"
+        android:textSize="30sp"
+        android:inputType="phone"
+        android:layout_marginBottom="12dp"
+        android:paddingHorizontal="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="비밀번호(6자 이상)"
+        android:textSize="30sp"
+        android:inputType="numberPassword"
+        android:layout_marginBottom="24dp"
+        android:paddingHorizontal="16dp"/>
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:text="가입하기"/>
+
+</LinearLayout>

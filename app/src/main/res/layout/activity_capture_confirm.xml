@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CaptureConfirmActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="약 봉투 사진넣기 및 사진확인"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 촬영하기 버튼 -->
+        <Button
+            android:id="@+id/buttonTakePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진넣기"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 촬영된 사진 미리보기 -->
+        <ImageView
+            android:id="@+id/imageViewPhotoPreview"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerInside"
+            android:background="#EEEEEE"
+            android:contentDescription="Captured Photo Preview" />
+
+        <!-- 현재 상태 또는 인식된 텍스트 요약 표시 -->
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="약 봉투 사진을 찍어주세요."
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- OCR 결과로 일치하는 약 정보 표시 영역 -->
+        <LinearLayout
+            android:id="@+id/linearLayoutMatchedMedicine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#F0F0F0"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <!-- 일치하는 약 사진 -->
+            <ImageView
+                android:id="@+id/imageViewMatchedMedicine"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#CCCCCC"
+                android:contentDescription="Matched Medicine Image"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- 약 이름과 정보 텍스트 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewMatchedMedicineName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="약 이름"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textViewMatchedMedicineInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="약 정보"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 등록하기 버튼 -->
+        <Button
+            android:id="@+id/buttonRegisterConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록하기"
+            android:layout_marginTop="24dp"
+            android:textSize="24sp"
+            android:visibility="gone"/>
+
+        <!-- 뒤로가기 버튼 -->
+        <Button
+            android:id="@+id/buttonBackConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="뒤로가기"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
